@@ -1,0 +1,51 @@
+{
+	"name": "helpsage-bd",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Hasib",
+	"license": "MIT",
+	"scripts": {
+		"start": "node ./build/server",
+		"dev": "ts-node-dev -r dotenv/config ./src/server"
+	},
+	"keywords": [],
+	"dependencies": {
+		"atob": "^2.1.2",
+		"bcrypt": "^5.0.1",
+		"cloudinary": "^1.26.3",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"express-list-endpoints": "^6.0.0",
+		"http-errors": "^1.7.2",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.13.7",
+		"multer": "^1.4.3",
+		"multer-storage-cloudinary": "^4.0.0",
+		"passport": "^0.4.1",
+		"passport-github2": "^0.1.12",
+		"passport-google-oauth20": "^2.0.0",
+		"socket.io": "^4.2.0"
+	},
+	"devDependencies": {
+		"@types/atob": "^2.1.2",
+		"@types/bcrypt": "^5.0.0",
+		"@types/cookie-parser": "^1.4.2",
+		"@types/cors": "^2.8.12",
+		"@types/dotenv": "^8.2.0",
+		"@types/express": "^4.17.13",
+		"@types/express-list-endpoints": "^4.0.1",
+		"@types/http-errors": "^1.8.1",
+		"@types/jsonwebtoken": "^8.5.4",
+		"@types/mongoose": "^5.11.97",
+		"@types/multer": "^1.4.7",
+		"@types/passport": "^1.0.7",
+		"@types/passport-github2": "^1.2.5",
+		"@types/passport-google-oauth20": "^2.0.9",
+		"@types/socket.io": "^3.0.2",
+		"ts-node": "^10.2.1",
+		"ts-node-dev": "^1.1.8",
+		"typescript": "^4.3.5"
+	}
+}
