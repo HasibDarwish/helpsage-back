@@ -16,7 +16,14 @@ GoogleRouter.get(
 		try {
 			res.cookie("accessToken", req.user.tokens.accessToken, cookieOption);
 			res.cookie("refreshToken", req.user.tokens.refreshToken, cookieOption);
-			res.status(200).redirect(`${process.env.REDIRECT_TO_FRONT!}`);
+			res
+				.status(200)
+				.redirect(
+					`${
+						process.env.REDIRECT_TO_FRONT! ||
+						"https://helpsage-frontend.vercel.app/login"
+					}`
+				);
 		} catch (error) {
 			next(error);
 		}
