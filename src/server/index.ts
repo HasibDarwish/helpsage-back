@@ -23,7 +23,15 @@ dotenv.config();
 const {PORT, MONGO_URL} = process.env;
 const app = express();
 
-app.use(cors({origin: "http://localhost:3000", credentials: true}));
+app.use(cors({
+	origin: [
+		process.env.MONGO_URL!,
+		process.env.GOOGLE_REDIRECT_URL!,
+		process.env.GITHUB_REDIRECT_URL!,
+		process.env.REDIRECT_TO_FRONT!,
+		process.env.FRONT_END_CLOUD!,
+	], credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
@@ -39,7 +47,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
 	cors: {
-		origin: ["http://localhost:3000"],
+		origin: [process.env.FRONT_END_CLOUD!],
 		methods: ["GET", "POST", "DELETE", "PUT"],
 		allowedHeaders: ["my-custom-header"],
 		credentials: true,
@@ -67,12 +75,10 @@ io.on("connection", (socket) => {
 				},
 				{new: true}
 			);
-			// socket.to(msgIn.chatId).emit("message", msg.history[msg.history.length - 1]);
 			io.to(msgIn.roomId).emit("message", {
 				roomId: msgIn.roomId,
 				message:msgIn.message
 			});
-			// message: msg.history[msg.history.length - 1],
 		} catch (error) {
 			console.log(error);
 		}
