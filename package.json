@@ -5,7 +5,8 @@
 	"author": "Hasib",
 	"license": "MIT",
 	"scripts": {
-		"start": "node ./build/server",
+		"build": "tsc",
+		"start": "node -r dotenv/config ./build/server",
 		"dev": "ts-node-dev -r dotenv/config ./src/server"
 	},
 	"keywords": [],
