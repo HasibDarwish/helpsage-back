@@ -17,7 +17,7 @@ export const JWTAuthentication: RequestType = async (req, res, next) => {
 					populate: {
 						path: "user",
 						model: "User",
-						select: {firstName: 1, image: 1},
+						select: {username: 1, image: 1},
 					},
 				}).populate({
 					path: "chats",
