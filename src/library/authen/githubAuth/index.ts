@@ -19,7 +19,7 @@ passport.use(
 		) {
 			try {
 				const user = await UserModel.findOne({
-					"email": profile.emails[0].value,
+					email: profile.emails[0].value,
 				});
 				if (user) {
 					const tokens = await generatePairOfJwtToken(user);

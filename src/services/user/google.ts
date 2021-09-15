@@ -16,7 +16,7 @@ GoogleRouter.get(
 		try {
 			res.cookie("accessToken", req.user.tokens.accessToken, cookieOption);
 			res.cookie("refreshToken", req.user.tokens.refreshToken, cookieOption);
-			res.status(200).redirect(`${process.env.LOCAL_GOOGLE_REDIRECT!}`);
+			res.status(200).redirect(`${process.env.REDIRECT_TO_FRONT!}`);
 		} catch (error) {
 			next(error);
 		}

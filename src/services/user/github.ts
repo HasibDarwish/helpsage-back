@@ -21,7 +21,7 @@ GithubRouter.get(
 		try {
 			res.cookie("accessToken", req.user.tokens.accessToken, cookieOptions);
 			res.cookie("refreshToken", req.user.tokens.refreshToken, cookieOptions);
-			res.status(200).redirect(`${process.env.FRONT_END_LOCAL_URL!}`);
+			res.status(200).redirect(`${process.env.REDIRECT_TO_FRONT!}`);
 		} catch (error) {
 			next(error);
 		}
